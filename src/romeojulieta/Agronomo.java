@@ -9,6 +9,37 @@ package romeojulieta;
  *
  * @author jcoq2
  */
-public class Agronomo {
+public class Agronomo extends Aldeano
+{
+    private double puntosAtaque;
+
+    public Agronomo(String nombre, String apellido, int edad, double puntosVida) {
+        super(nombre, apellido, edad, puntosVida);
+        this.puntosAtaque = 100;
+    }
+
+    public double getPuntosAtaque() {
+        return puntosAtaque;
+    }
+
+    public void setPuntosAtaque(double puntosAtaque) {
+        this.puntosAtaque = puntosAtaque;
+    }
+
+    @Override
+    public double ataque(Aldeano atacar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String toString() {
+        return "Agronomo{" + "puntosAtaque=" + puntosAtaque + '}';
+    }
+
+
+    
+
+
+
     
 }

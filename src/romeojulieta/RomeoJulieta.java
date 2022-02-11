@@ -5,17 +5,26 @@
  */
 package romeojulieta;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jcoq2
  */
 public class RomeoJulieta {
-
+    
+    static ArrayList<Familia>familias = new ArrayList();
+    static Familia FamiliaCapuleto;
+    static Familia FamiliaMontesco;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    
+    FamiliaCapuleto = new Familia();
+     
+        
     }
     
 }

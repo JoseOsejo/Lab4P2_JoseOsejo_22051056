@@ -9,6 +9,36 @@ package romeojulieta;
  *
  * @author jcoq2
  */
-public class Explosivo {
+public class Explosivo extends Aldeano
+{
+    
+    private double puntosAtaque;
+
+    public Explosivo(String nombre, String apellido, int edad, double puntosVida) {
+        super(nombre, apellido, edad, puntosVida);
+        this.puntosAtaque = 250;
+    }
+
+    public double getPuntosAtaque() {
+        return puntosAtaque;
+    }
+
+    public void setPuntosAtaque(double puntosAtaque) {
+        this.puntosAtaque = puntosAtaque;
+    }
+
+    @Override
+    public String toString() {
+        return "Explosivo{" + "puntosAtaque=" + puntosAtaque + '}';
+    }
+    
+    
+    //ataca a todos hasta sus familiares
+    @Override
+    public double ataque(Aldeano atacar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }
