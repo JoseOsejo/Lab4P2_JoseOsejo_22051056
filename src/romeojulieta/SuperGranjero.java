@@ -9,12 +9,6 @@ package romeojulieta;
  *
  * @author jcoq2
  */
-public class Aldeano 
-{
-    protected String nombre;
-    protected String apellido;//no se puede repetir y se agrega a la lista de aldeanos da la familia segun el apellido
-    protected int edad;
-    protected double puntosVida;
-    
+public class SuperGranjero {
     
 }
