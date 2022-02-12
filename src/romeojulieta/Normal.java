@@ -28,15 +28,21 @@ public class Normal extends Aldeano
         this.puntosAtaque = puntosAtaque;
     }
 
+    
+    @Override
+    public double ataque(Aldeano atacar) {
+        if(atacar instanceof Pacifista){
+            return puntosAtaque*1.05;
+        }
+        return puntosAtaque;
+    }
+    
+    
     @Override
     public String toString() {
         return "Normal{" + "puntosAtaque=" + puntosAtaque + '}';
     }
 
-    @Override
-    public double ataque(Aldeano atacar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
    
     

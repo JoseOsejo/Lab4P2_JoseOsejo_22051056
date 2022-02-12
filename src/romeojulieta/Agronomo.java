@@ -25,10 +25,18 @@ public class Agronomo extends Aldeano
     public void setPuntosAtaque(double puntosAtaque) {
         this.puntosAtaque = puntosAtaque;
     }
-
+    
     @Override
     public double ataque(Aldeano atacar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(probabilidadFallar(5)== false){
+            if( atacar instanceof Pacifista){
+                return puntosAtaque*1.05;
+            }else if(atacar instanceof Normal){
+                return puntosAtaque*1.1;
+            }
+            return puntosAtaque;
+        }
+        return 0;
     }
 
     @Override

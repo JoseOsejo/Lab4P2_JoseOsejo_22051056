@@ -36,7 +36,15 @@ public class Explosivo extends Aldeano
     //ataca a todos hasta sus familiares
     @Override
     public double ataque(Aldeano atacar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(probabilidadFallar(15)== false){
+            if(atacar instanceof Herrero){
+                return puntosAtaque*1.05;
+            }else if(atacar instanceof Agronomo){
+                return puntosAtaque*1.1;
+            }
+            return puntosAtaque;
+        }
+        return 0;
     }
     
     

@@ -14,7 +14,7 @@ public class Herrero extends Aldeano
 
     private double puntosAtaque;
     
-    public Herrero(String nombre, String apellido, int edad, double puntosVida,double puntosAtaque) {
+    public Herrero(String nombre, String apellido, int edad, double puntosVida) {
         super(nombre, apellido, edad, puntosVida*1.5);
         puntosAtaque = Math.random()*(200-500);
     }
@@ -34,7 +34,15 @@ public class Herrero extends Aldeano
     
     @Override
     public double ataque(Aldeano atacar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(probabilidadFallar(10)== false){
+            if(atacar instanceof Agronomo){
+                return puntosAtaque*1.1;
+            }else if(atacar instanceof Pacifista){
+                return puntosAtaque*1.05;
+            }
+            return puntosAtaque;
+        }
+        return 0;
     }
 
     @Override

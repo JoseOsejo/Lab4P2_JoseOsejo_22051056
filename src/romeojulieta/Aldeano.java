@@ -5,12 +5,14 @@
  */
 package romeojulieta;
 
+import java.util.Random;
+
 /**
  *
  * @author jcoq2
  */
-public abstract class Aldeano 
-{
+public abstract class Aldeano {
+
     protected String nombre;
     protected String apellido;//no se puede repetir y se agrega a la lista de aldeanos da la familia segun el apellido
     protected int edad;
@@ -22,7 +24,6 @@ public abstract class Aldeano
         this.edad = edad;
         this.puntosVida = puntosVida;
     }
-    
 
     public String getNombre() {
         return nombre;
@@ -55,13 +56,21 @@ public abstract class Aldeano
     public void setPuntosVida(double puntosVida) {
         this.puntosVida = puntosVida;
     }
+
     public abstract double ataque(Aldeano atacar);
+
+    public boolean probabilidadFallar(int porcentajeFallo) {
+        Random numeroRandom = new Random();
+        int porcentaje = numeroRandom.nextInt(100);
+        if(porcentaje<=porcentajeFallo){
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public String toString() {
         return "Aldeano{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", puntosVida=" + puntosVida + '}';
     }
-    
-    
-    
+
 }

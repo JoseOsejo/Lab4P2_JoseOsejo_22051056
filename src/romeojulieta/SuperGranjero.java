@@ -12,7 +12,7 @@ package romeojulieta;
 public class SuperGranjero extends Aldeano{
     private double puntosAtaque;
 
-    public SuperGranjero(double puntosAtaque, String nombre, String apellido, int edad, double puntosVida) {
+    public SuperGranjero(String nombre, String apellido, int edad) {
         super(nombre, apellido, edad, 1000);
         this.puntosAtaque = 1000;
     }
