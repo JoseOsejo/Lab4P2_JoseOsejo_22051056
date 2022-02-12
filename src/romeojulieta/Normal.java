@@ -40,7 +40,7 @@ public class Normal extends Aldeano
     
     @Override
     public String toString() {
-        return "Normal{" + "puntosAtaque=" + puntosAtaque + '}';
+        return super.toString()+"Normal{" + "puntosAtaque=" + puntosAtaque + '}';
     }
 
 

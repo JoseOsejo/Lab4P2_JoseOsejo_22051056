@@ -41,7 +41,7 @@ public class Agronomo extends Aldeano
 
     @Override
     public String toString() {
-        return "Agronomo{" + "puntosAtaque=" + puntosAtaque + '}';
+        return super.toString()+"Agronomo{" + "puntosAtaque=" + puntosAtaque + '}';
     }
 
 

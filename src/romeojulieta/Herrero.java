@@ -47,7 +47,7 @@ public class Herrero extends Aldeano
 
     @Override
     public String toString() {
-        return "Herrero{" + "puntosAtaque=" + puntosAtaque + '}';
+        return super.toString()+"Herrero{" + "puntosAtaque=" + puntosAtaque + '}';
     }
  
     

@@ -32,5 +32,10 @@ private String discursoPaz;
         this.discursoPaz = discursoPaz;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+ "Pacifista{" + "discursoPaz=" + discursoPaz + '}';
+    }
+
 
 }
