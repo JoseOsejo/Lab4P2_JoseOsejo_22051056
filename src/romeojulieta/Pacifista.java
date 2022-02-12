@@ -13,9 +13,8 @@ public class Pacifista extends Aldeano
 {
 private String discursoPaz;
 
-    public Pacifista(String discursoPaz, String nombre, String apellido, int edad, double puntosVida) {
+    public Pacifista(String nombre, String apellido, int edad, double puntosVida) {
         super(nombre, apellido, edad, puntosVida);
-        this.discursoPaz = discursoPaz;
     }
 
     @Override

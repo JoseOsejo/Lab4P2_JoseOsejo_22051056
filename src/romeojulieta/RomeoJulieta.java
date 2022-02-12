@@ -17,6 +17,7 @@ public class RomeoJulieta {
     public static ArrayList<Familia> familias = new ArrayList();
     public static Familia familiaCapuleto;
     public static Familia familiaMontesco;
+    public static Familia familiaOsejo;
     public static Scanner sc = new Scanner(System.in);
 
     /**
@@ -34,12 +35,15 @@ public class RomeoJulieta {
         familiaMontesco.getAldeanos().add(new SuperGranjero("Romeo", "Montesco", 20));
         familiaMontesco.getAldeanos().add(new Herrero("Jorge", "Montesco", 20, 200));
         familiaMontesco.getAldeanos().add(new Agronomo("Ramon", "Montesco", 20, 200));
-        
-        F
-        
+
+        familiaOsejo = new Familia("Osejo");
+        familiaOsejo.getAldeanos().add(new Normal("Jose", "Osejo", 20, 320));
+        familiaOsejo.getAldeanos().add(new Pacifista("Claudio", "Osejo", 32, 439));
+        familiaOsejo.getAldeanos().add(new Herrero("Carlos", "Osejo", 32, 500));
+
         familias.add(familiaCapuleto);
         familias.add(familiaMontesco);
-
+        familias.add(familiaOsejo);
         do {
             opciones(menu());
         } while (true);
@@ -104,7 +108,86 @@ public class RomeoJulieta {
     }
 
     public static void crearAldeano() {
-
+        System.out.println("**Tipos de Aldeanos**\n1. Normal\n2. Pacifista\n3. Herrero\n4. Agronomo\n5. Explosivo");
+        System.out.println("Ingrese una opcion");
+        int opcionAldeano = sc.nextInt();
+        if (opcionAldeano == 1) {
+            System.out.println("Ingrese el nombre del Aldeano");
+            String nombreAldeano = sc.next();
+            System.out.println("Ingrese el Apellido del Aldeano");
+            String apellido = sc.next();
+            System.out.println("Ingrese la edad del Aldeano");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese los puntos de Vida");
+            double puntosVida = sc.nextDouble();
+            if(linajeUnico(apellido) == false){
+                Familia fam = retornarFamilia(apellido);
+                fam.getAldeanos().add(new Normal(nombreAldeano,apellido,edad,puntosVida));
+            }else{
+                System.out.println("No se pudo Crear el Aldeano");
+            }
+        }else if(opcionAldeano == 2){
+            System.out.println("Ingrese el nombre del Aldeano");
+            String nombreAldeano = sc.next();
+            System.out.println("Ingrese el Apellido del Aldeano");
+            String apellido = sc.next();
+            System.out.println("Ingrese la edad del Aldeano");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese los puntos de Vida");
+            double puntosVida = sc.nextDouble();
+            if(linajeUnico(apellido) == false){
+                Familia fam = retornarFamilia(apellido);
+                fam.getAldeanos().add(new Pacifista(nombreAldeano,apellido,edad,puntosVida));
+            }else{
+                System.out.println("No se pudo Crear el Aldeano");
+            }
+        }else if(opcionAldeano == 3)
+        {
+            System.out.println("Ingrese el nombre del Aldeano");
+            String nombreAldeano = sc.next();
+            System.out.println("Ingrese el Apellido del Aldeano");
+            String apellido = sc.next();
+            System.out.println("Ingrese la edad del Aldeano");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese los puntos de Vida");
+            double puntosVida = sc.nextDouble();
+            if(linajeUnico(apellido) == false){
+                Familia fam = retornarFamilia(apellido);
+                fam.getAldeanos().add(new Herrero(nombreAldeano,apellido,edad,puntosVida));
+            }else{
+                System.out.println("No se pudo Crear el Aldeano");
+            }
+        }else if(opcionAldeano == 4){
+            System.out.println("Ingrese el nombre del Aldeano");
+            String nombreAldeano = sc.next();
+            System.out.println("Ingrese el Apellido del Aldeano");
+            String apellido = sc.next();
+            System.out.println("Ingrese la edad del Aldeano");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese los puntos de Vida");
+            double puntosVida = sc.nextDouble();
+            if(linajeUnico(apellido) == false){
+                Familia fam = retornarFamilia(apellido);
+                fam.getAldeanos().add(new Agronomo(nombreAldeano,apellido,edad,puntosVida));
+            }else{
+                System.out.println("No se pudo Crear el Aldeano");
+            }
+        }else if(opcionAldeano == 5){
+            System.out.println("Ingrese el nombre del Aldeano");
+            String nombreAldeano = sc.next();
+            System.out.println("Ingrese el Apellido del Aldeano");
+            String apellido = sc.next();
+            System.out.println("Ingrese la edad del Aldeano");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese los puntos de Vida");
+            double puntosVida = sc.nextDouble();
+            if(linajeUnico(apellido) == false){
+                Familia fam = retornarFamilia(apellido);
+                fam.getAldeanos().add(new Explosivo(nombreAldeano,apellido,edad,puntosVida));
+            }else{
+                System.out.println("No se pudo Crear el Aldeano");
+            }
+        }
     }
 
     public static void imprimirFamilias() {
