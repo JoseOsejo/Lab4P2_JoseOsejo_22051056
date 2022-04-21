@@ -196,7 +196,7 @@ public class RomeoJulieta {
         }
     }
 
-    public static void pelear() {
-
+    public static void pelear() 
+    {
     }
 }
